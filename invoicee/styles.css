@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+table{
+    border: 1px solid black;
+    box-sizing: border-box;
+    /* Just in case if you have defined
+                           left or right padding to the input */
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+
+}
+body{
+    background-color: lightblue;
+}
+
+table input[type="text"] {
+    width: 80%;
+    box-sizing: border-box;
+    /* Just in case if you have defined
+                           left or right padding to the input */
+    border-collapse: collapse;
+    border: none;
+}
+
+/* table tr{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+} */
+
+
+table tr td{
+
+}
+
+table label {
+
+    min-width: 20px;
+}
+
+
+
+table  tr  th {
+    border: 1px solid black;
+}
+
+table.hamash td{
+    border: 1px solid black;
+
+}
+
+.hamash{
+    margin: 0 auto;
+    border: 1px solid black;
+    box-sizing: border-box;
+    /* Just in case if you have defined
+                           left or right padding to the input */
+    border-collapse: collapse;
+    width: 90%;
+
+}
+
+.cond{
+    /*width: 500px;*/
+    display: flex;
+    /*flex-wrap: wrap;*/
+    flex-direction: row;
+    /*align-content: center;*/
+    /*justify-content: space-between;*/
+}
+
+.hi{
+    padding: 0;
+    margin: 0;
+    height: 120px;
+    /*right: 0;*/
+    /*float: right;*/
+}
+
+textarea{
+    height: 130px;
+
+    resize: none;
+    width: 90%;
+}

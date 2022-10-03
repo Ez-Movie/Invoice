@@ -1,0 +1,65 @@
+<form [formGroup]="personForm">
+
+<!--  <tr>-->
+<!--    &lt;!&ndash; <td><label> نام شخص حقيقي / حقوقي :</label></td> &ndash;&gt;-->
+<!--    <td><label> نام شخص حقيقي / حقوقي :</label></td>-->
+<!--    <td colspan="3"><input type="text" #name></td>-->
+<!--    <td><label> شماره اقتصادي :</label></td>-->
+<!--    <td><input type="text" #economy_num></td>-->
+<!--    <td><label> شماره ثبت :</label></td>-->
+<!--    <td colspan="3"><input type="text" #registration_num></td>-->
+<!--  </tr>-->
+<!--  <tr>-->
+<!--    <td><label>نشاني كامل :استان :</label></td>-->
+<!--    <td><input type="text" #address_of_province></td>-->
+<!--    <td><label> شهرستان:</label></td>-->
+<!--    <td><input type="text" #small_province></td>-->
+<!--    <td><label> كد پستي 10 رقمي :</label></td>-->
+<!--    <td><input type="text" #post_code></td>-->
+<!--    <td><label>شهر : </label></td>-->
+<!--    <td colspan="3"><input type="text" #city></td>-->
+<!--  </tr>-->
+<!--  hehe-->
+  <table>
+    <tr>
+      <th align="center" colspan="10">{{ titel1 }}</th>
+    </tr>
+
+    <tr>
+      <!-- <td><label> نام شخص حقيقي / حقوقي :</label></td> -->
+      <td><label [for]="tmp_ids[0]"> نام شخص حقيقي / حقوقي :</label></td>
+      <td colspan="3">{{ Ipers.name }}</td>
+      <td><label [for]="tmp_ids[1]"> شماره اقتصادي :</label></td>
+      <td>{{ Ipers.economy_num }}</td>
+      <td><label [for]="tmp_ids[2]"> شماره ثبت :</label></td>
+      <td colspan="3">{{ Ipers.registration_num }}</td>
+    </tr>
+    <tr>
+      <td><label [for]="tmp_ids[3]">نشاني كامل :استان :</label></td>
+      <td> {{ Ipers.address_of_province }}</td>
+      <td><label [for]="tmp_ids[4]"> شهرستان:</label></td>
+      <td>{{ Ipers.small_province }}</td>
+      <td><label [for]="tmp_ids[5]"> كد پستي 10 رقمي :</label></td>
+      <td>{{ Ipers.post_code }}</td>
+      <td><label [for]="tmp_ids[6]">شهر : </label></td>
+      <td colspan="3"> {{ Ipers.city }}</td>
+    </tr>
+
+    <tr>
+      <td><label [for]="tmp_ids[7]"> نشاني :</label></td>
+      <td colspan="3">{{ Ipers.address }}</td>
+      <td><label [for]="tmp_ids[8]"> شماره ملي:</label></td>
+      <td>{{ Ipers.national_num }}</td>
+      <td><label [for]="tmp_ids[9]"> تلفن :</label></td>
+      <td>{{ Ipers.tel }}</td>
+      <td><label [for]="tmp_ids[10]"> نمابر:</label></td>
+      <td>{{ Ipers.fax }}</td>
+    </tr>
+
+<!--    <button (click)="test()"> sabt</button>-->
+
+  </table>
+
+
+
+</form>

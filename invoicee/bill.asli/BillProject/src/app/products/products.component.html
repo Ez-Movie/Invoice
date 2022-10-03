@@ -1,0 +1,99 @@
+<form>
+
+  <table>
+    <tr>
+      <th align="center" colspan="10">مشخصات كالا يا خدمات</th>
+    </tr>
+  </table>
+
+  <table class="hamash">
+    <tr>
+      <th>ردیف</th>
+      <th style="width: 5%;">كد كالا</th>
+      <th> شـرح كـالا يا خدمـــات</th>
+      <th>مقدار</th>
+      <th>واحد</th>
+      <th>مبلغ واحد (ریال)</th>
+      <th> مبلغ کل (ریال)</th>
+      <th>مبلغ تخفیف</th>
+      <th>مبلغ کل پس از تخفیف (ریال)</th>
+      <th>جمع مالیات و عوارض (ریال)</th>
+      <th> جمع مبلغ کل بعلاوه جمع مالیات و عوارض (ریال)</th>
+    </tr>
+    <tbody>
+
+    <ng-container
+      *ngFor="let products of http$ | async; let i = index"
+    >
+      <tr align="center">
+        <th>{{ i + 1 }}</th>
+        <td>{{ products.sku }}</td>
+        <td>{{ products.title }}</td>
+        <td>{{ products.quantity }}</td>
+        <td>{{ products.base }}</td>
+        <td>{{ products.base_price }}</td>
+        <td>{{ products.total_price }}</td>
+        <td>{{ products.discount }}</td>
+        <td>{{ products.total_price_after_discount }}</td>
+        <td>{{ products.tax }}</td>
+        <td>{{ products.totalPrice_p_totalTax_p_toll }}</td>
+      </tr>
+    </ng-container>
+
+    <!--    <tr>-->
+    <!--      <th>1</th>-->
+    <!--      <td><input type="text"></td>-->
+    <!--      <td><input type="text"></td>-->
+    <!--      <td><input type="text"></td>-->
+    <!--      <td><input type="text"></td>-->
+    <!--      <td><input type="text"></td>-->
+    <!--      <td><input type="text"></td>-->
+    <!--      <td><input type="text"></td>-->
+    <!--      <td><input type="text"></td>-->
+    <!--      <td><input type="text"></td>-->
+    <!--      <td><input type="text"></td>-->
+    <!--    </tr>-->
+
+    <tr align='center'>
+      <th scope="row" colspan="6">جمــع كـل قابل پرداخت : {{ ITot.total_for_pay }}</th>
+      <td>{{ ITot.total_price }}</td>
+      <td>{{ ITot.total_discount }}</td>
+      <td>{{ ITot.total_price_after_discount }}</td>
+      <td>{{ ITot.total_tax_p_toll }}</td>
+      <td>{{ ITot.totalPrice_p_totalTax_p_toll }}</td>
+    </tr>
+    <tr style="margin-right: 0">
+
+      <!--      <div class="cond">-->
+      <td scope="row" colspan="6" align="right" *ngIf="IInf.is_Cash; else elseBlock">شرایط و نحوه فروش:
+        <label for="1" style="margin: 0 50px 0 5px">نقدی</label>
+        <input type="radio" id="1" name="1" style="margin: 0 5px" checked="checked" >
+        <label for="2" style="margin: 0 25px">غیر نقدی</label>
+        <input type="radio" id="2" name="1" style="margin: 0 5px" disabled="true">
+      </td>
+      <ng-template #elseBlock>
+        <td scope="row" colspan="6" align="right" *ngIf="!IInf.is_Cash">شرایط و نحوه فروش:
+          <label for="1" style="margin: 0 50px 0 5px">نقدی</label>
+          <input type="radio" id="1" name="1" style="margin: 0 5px" disabled="true">
+          <label for="2" style="margin: 0 25px" disabled="true">غیر نقدی</label>
+          <input type="radio" id="2" name="1" style="margin: 0 5px" checked="checked">
+        </td>
+      </ng-template>
+
+
+      <!--      </div>-->
+
+      <td scope="row" colspan="6">توضیحات: {{ IInf.str }}</td>
+    </tbody>
+  </table>
+
+  <button
+    type="button"
+    (click)="addASkillFormGroup()"
+    class="btn btn-primary"
+  >
+    Add A Skill
+  </button>
+
+
+</form>
